@@ -1,4 +1,6 @@
 # 4.Execution_of_NetworkCommands
+### NAME : DODLA SUSMITHA
+### REGISTER NO : 212224110016
 ## AIM :Use of Network commands in Real Time environment
 ## Software : Command Prompt And Network Protocol Analyzer
 ## Procedure: To do this EXPERIMENT- follows these steps:
@@ -26,53 +28,38 @@ This commands includes
 • Other IP Commands e.g. show ip route etc.
 <BR>
 
-# PROGRAM
-
-## CLIENT
-```
-import socket
-
-s = socket.socket()
-s.connect(('localhost', 8000))
-
-while True:
-    ip = input("Enter the website you want to ping (or type 'exit' to quit): ")
-    s.send(ip.encode('utf-8'))
-    if ip.lower() == 'exit':
-        break
-    print(s.recv(4096).decode('utf-8'))
-
-s.close()
-```
-## SERVER
-```
-import socket
-from pythonping import ping
-
-s = socket.socket()
-s.bind(('localhost', 8000))
-s.listen(5)
-print("Server listening on port 8000...")
-c, addr = s.accept()
-print(f"Connection from {addr}")
-
-while True:
-    try:
-        hostname = c.recv(1024).decode('utf-8')
-        if not hostname or hostname.lower() == 'exit':
-            print("Client disconnected.")
-            break
-        response = ping(hostname, verbose=False, count=4)
-        c.send(str(response).encode('utf-8'))
-    except Exception as e:
-        c.send(f"Ping failed: {e}".encode('utf-8'))
-
-c.close()
-```
-
 ## Output
+### netsat:
+<img width="1066" height="470" alt="Screenshot 2025-11-12 105252" src="https://github.com/user-attachments/assets/ff115e26-f06e-4694-9cf3-2f00b4081aa4" />
 
-<img width="1668" height="464" alt="image" src="https://github.com/user-attachments/assets/7b8feec2-c9e5-4c6e-b42f-7be704a39607" />
+### ipconfig:
+<img width="1043" height="536" alt="Screenshot 2025-11-12 105305" src="https://github.com/user-attachments/assets/c5a17ec8-5628-4b1e-897e-31ff254a37ee" />
+
+### ping:
+<img width="1061" height="342" alt="Screenshot 2025-11-12 105314" src="https://github.com/user-attachments/assets/c9974091-8d4f-4b6d-9afa-103ad89dedfc" />
+
+### tracet:
+<img width="1036" height="422" alt="Screenshot 2025-11-12 105329" src="https://github.com/user-attachments/assets/0349eb4f-107e-4144-9124-1e74f5eb379f" />
+
+### nslookup :
+<img width="1119" height="608" alt="Screenshot 2025-11-12 105341" src="https://github.com/user-attachments/assets/80b87585-3300-4934-8f94-a2db220dc1be" />
+
+### getmac :
+<img width="1050" height="224" alt="Screenshot 2025-11-12 105351" src="https://github.com/user-attachments/assets/a9ecb397-7ea0-4da9-9ca3-38254d3f1ba1" />
+
+### hostname :
+<img width="966" height="166" alt="Screenshot 2025-11-12 105401" src="https://github.com/user-attachments/assets/04a2635d-1e22-4867-beb1-addfbbf9a1ef" />
+
+### nbtstat :
+<img width="1040" height="569" alt="Screenshot 2025-11-12 105419" src="https://github.com/user-attachments/assets/31b5dfed-c6f6-4a6a-90c3-77e7cf3eab3c" />
+
+### arp :
+<img width="1036" height="660" alt="Screenshot 2025-11-12 105430" src="https://github.com/user-attachments/assets/206e05a9-04ca-432e-9045-ba84cbfb71d9" />
+
+### systeminfo :
+<img width="1074" height="740" alt="Screenshot 2025-11-12 105440" src="https://github.com/user-attachments/assets/ca66a0d0-d86f-4617-8b55-0400f76034f0" />
+
 
 ## Result
 Thus Execution of Network commands Performed 
+
